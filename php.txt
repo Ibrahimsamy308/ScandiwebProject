@@ -1,0 +1,15 @@
+product {
+	
+	sku      	(string)
+	name	 	(string)
+	price    	(number)
+	typeswitcher 	(number)
+	
+type switcher {
+
+		size 
+		wight
+		dimention 	
+		}
+	
+}

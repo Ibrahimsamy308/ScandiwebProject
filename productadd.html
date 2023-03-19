@@ -28,29 +28,29 @@
                 <!-- <div class="card-heading"></div> -->
                 <div class="card-body">
                    
-                    <form method="POST">
+                    <form   method="POST"  action="Productlist.php">
                         <h2 class="title">Product</h2>
                         <hr>
                   
                         <div class="input-group">
-                            <input class="input--style-2" type="text" placeholder="SKU" name="sku">
+                            <input class="input--style-2" type="text" placeholder="SKU" name="sku" required >
                         </div>
 
                         <div class="input-group">
-                            <input class="input--style-2" type="text" placeholder="Name" name="name">
+                            <input class="input--style-2" type="text" placeholder="Name" name="name" required >
                         </div>
                         
                         <div class="input-group">
-                            <input class="input--style-2" type="number" placeholder="Price($)" name="price">
+                            <input class="input--style-2" type="number" placeholder="Price($)" name="price"required >
                         </div>
 
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="class" onchange="showDiv(this)">
-                                    <option id="select" disabled="disabled" selected="selected" >Type Switcher</option>
-                                    <option value="1" >DVD</option>
-                                    <option value="2">Furniture</option>
-                                    <option value="3">Book</option>
+                                <select name="typeswitcher" onchange="showDiv(this)" required>
+                                    <option disabled="disabled" selected="selected" >Type Switcher</option>
+                                    <option    value="dvd" >DVD</option>
+                                    <option    value="furniture">Furniture</option>
+                                    <option    value="book">Book</option>
                                 </select>
                                 <div class="select-dropdown"></div>
                             </div>
@@ -58,30 +58,30 @@
 
                         <!-- categories of div hidden  -->
                         <div id="dvd" class="input-group hidden">
-                            <input class="input--style-2" type="number" placeholder="Size(MB)" name="size">
+                            <input class="input--style-2" type="number" placeholder="Size(MB)" name="size"  >
                             <!-- <span>The size must be a number </span> -->
                         </div>
 
                         <div id="book" class="input-group hidden">
-                            <input class="input--style-2" type="number" placeholder="Weight (KG)" name="size">
+                            <input class="input--style-2" type="number" placeholder="Weight (KG)" name="weight"  >
                         </div>
 
                         <div id="furniture" class="input-group hidden">
-                            <input class="input--style-2" type="number" placeholder="Height(CM)" name="size">
+                            <input class="input--style-2" type="number" placeholder="Height(CM)" name="height" >
                             <hr>
-                            <input class="input--style-2" type="number" placeholder="Width(CM)" name="size">
+                            <input class="input--style-2" type="number" placeholder="Width(CM)" name="width" >
                             <hr>
-                            <input class="input--style-2" type="number" placeholder="Lenght(CM)" name="size">
+                            <input class="input--style-2" type="number" placeholder="Lenght(CM)" name="lenght" >
                         </div>
 
                           <!-- Buttons  -->
-                          <div class="p-t-20" >
-                            <button class="btn btn--radius btn--new" type="submit">Add</button>
-                        </div>  
+                            <div class="p-t-20" >
+                                <button  class="btn btn--radius btn--new" type="submit">Add</button>
+                            </div>  
 
-                        <div class="p-t-20">
-                            <button class="btn btn--radius btn--new" type="cancel">Cancel</button>
-                        </div>
+                            <div class="p-t-20">
+                                <a href="productadd.html" class="btn btn--radius btn--new" style="text-decoration: none;" type="cancel" >Cancel</a>
+                            </div>
                      
                       
 
@@ -99,16 +99,16 @@
 
     <script type="text/javascript">
         function showDiv(select){
-           if(select.value==1){
+           if(select.value=='dvd'){
             document.getElementById('dvd').style.display = "block";
             document.getElementById('furniture').style.display = "none";
             document.getElementById('book').style.display = "none";
-           }  else if(select.value==2){
+           }  else if(select.value=='furniture'){
             document.getElementById('furniture').style.display = "block";
             document.getElementById('dvd').style.display = "none";
             document.getElementById('book').style.display = "none";
            }
-           else if(select.value==3){
+           else if(select.value=='book'){
             document.getElementById('book').style.display = "block";
             document.getElementById('furniture').style.display = "none";
             document.getElementById('dvd').style.display = "none";

@@ -1,68 +1,95 @@
+    
+    <?php
+    require('parentclass.php');
+    require('dvd.php');
+    require('book.php');
+    require('furniture.php');
+    require('store.php');
+    // require('gettype.php');
+
+
+        // $sku=$_POST["sku"];
+        // $name=$_POST["name"];
+        // $price=$_POST["price"];
+        // $selected=$_POST["typeswitcher"];
+        // $size=$_POST["selected-size"];
+        // echo "the val".$size;
+
+
+        $newwww = new $_POST["typeswitcher"]($_POST["sku"],$name=$_POST["name"],$price=$_POST["price"],$selected=$_POST["typeswitcher"]);
+        $newwww->setsku($_POST["sku"]);
+        $newwww->setname($_POST["name"]);
+        $newwww->setprice($_POST["price"]); 
+        $newwww->setselected($_POST["typeswitcher"]);
+        // $newwww->valueofproduct();
+        // echo "after set the data";
+
+        $storedata =new store();
+        $storedata->storedb($newwww);
+    //    echo"the sku".$newwww->getsku();
+
+    // $newwww = new dvdchild('','','','');
+    // $newwww->settersku($_POST["sku"]);
+    // $newwww->type();
+    
+    // $newwww1 = new bookchild('','','','');
+    // $newwww1->settersku($_POST["sku"]);
+    // $newwww1->type();
+
+
+    // echo "the data of the object".$newwww->getsku()."the secand sku ".$newwww1->getsku();
+    // $newchild= new bookchild('');
+    // $newchild->type();
+    
+    ?>
 
     <?php
+     
+     
 
-        //parent class
-      abstract class productt{
+        // $sku=$_POST["sku"];
+        // $name=$_POST["name"];
+        // $price=$_POST["price"];
+        // $selected=$_POST["typeswitcher"];
 
-            private $sku;
-            private $bname;
-            private $bprice;
-            private $bweight;
+        // if($selected=='dvd'){
+        //     $size=$_POST['size'];
 
+        // } elseif($selected=='book'){
+        //     $size=$_POST['weight'];
 
+        // } elseif($selected=='furniture'){
+        //     $fheight=$_POST['fheight'];
+        //     $fweight=$_POST['fwidth'];
+        //     $flenght=$_POST['flenght'];
 
-      }
-
-        //child class
-        // class product extends productt{
-
-        //     private $sku;
-        //     private $bname;
-        //     private $bprice;
-        //     private $bweight;
-
-
-        //     public function __construct($sku,$bname,$bprice,$bweight)
-        //     {
-        //         $this->$sku=$sku;
-        //         $this->$bname=$bname;
-        //         $this->$bprice=$bprice;
-        //         $this->$bweight=$bweight;
-        //     }
-
-        //     public function getsku(){
-        //         return $this->sku;
-        //     }
-
-        //     public function getbname(){
-        //         return $this->bname;
-        //     }
-
-        //     public function getbprice(){
-        //         return $this->bprice;
-        //     }
-
-        //     public function getbweight(){
-        //         return $this->bweight;
-        //     }
-
-        //     public function settersku($sku){
-        //         $this->sku=$sku;
-        //     }
-
-        //     public function setterbname($bname){
-        //         $this->bname=$bname;
-        //     }
-
-        //     public function setterbprice($bprice){
-        //         $this->bprice=$bprice;
-        //     }
-
-        //     public function setterbwight($bweight){
-        //         $this->bweight=$bweight;
-        //     }
+        //     $size= $fheight."*". $fweight."*". $flenght;
 
         // }
+
+
+        // echo " the sku =    ".$sku." ".$name." ".$price." ".$selected." %the size ".$size;
+
+        // // Create connection
+        // $conn = new mysqli("localhost","root","", "productlist");
+        // // Check connection
+        // if ($conn->connect_error) {
+        //     die("Connection failed: " . $conn->connect_error);
+        // }
+
+        // $sql = "INSERT INTO product (sku, name, price,type,size)
+        //           VALUES ('$sku', '$name', '$price','$selected','$size')";
+
+        // if ($conn->query($sql) === TRUE) {
+        //     echo "New record created successfully";
+        // } else {
+        //     echo "Error: " . $sql . "<br>" . $conn->error;
+        // }
+
+        // $conn->close();
+
+
+ 
     ?>
 
 
