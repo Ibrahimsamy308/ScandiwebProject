@@ -57,9 +57,8 @@
                 $height=$_POST["height"];
                 $width=$_POST["width"];
                 $lenght=$_POST["lenght"];
-                $valuestore="".$height."*".$width."*".$lenght;
+                $valuestore="Dimension:" .$height."*".$width."*".$lenght;
                 return $valuestore;
-                // echo "the type is Furniture Yafanan and the dimension =".$dimension;
         }
         
 

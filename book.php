@@ -1,9 +1,7 @@
 
     <?php
 
-    
-        // require('parentclass.php');
-        //child class
+       //child class
        class book extends parentclass{
 
            private $valuestore;
@@ -14,6 +12,7 @@
             $this->$valuestore=$valuestore;
             
         }
+
         //getter and setter for weight
         public function getvaluestore(){
             return $this->valuestore;
@@ -22,11 +21,12 @@
         public function setvaluestore($valuestore){
             $this->valuestore=$valuestore;
         }
-
+        
         public function valueofproduct(){
+          
            
-            return $valuestore=$_POST["weight"];
-                // echo "the type is Book Yafanan and the weight is ".$weight;
+            return   $valuestore="Weight:" .$_POST["weight"] ."KG";
+            
         }
         
         

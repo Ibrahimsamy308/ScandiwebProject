@@ -21,8 +21,8 @@
 
         public function valueofproduct(){
 
-          return  $valuestore=$_POST["size"];
-            // echo "the type is DVD Yafanan and the size is ".$size;
+          return  $valuestore="Size".$_POST["size"]."MB";
+          
         }
 
         
