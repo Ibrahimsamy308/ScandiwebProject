@@ -21,7 +21,7 @@
 
         public function valueofproduct(){
 
-          return  $valuestore="Size".$_POST["size"]."MB";
+          return  $valuestore="Size:".$_POST["size"]."MB";
           
         }
 

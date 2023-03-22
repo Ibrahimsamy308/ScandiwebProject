@@ -4,7 +4,7 @@
                
                 $con = mysqli_connect("localhost","root","","productlist");
                 
-                    if(isset($_POST['stud_delete_multiple_btn']))
+                    if(isset($_POST['pro_delete_multiple_btn']))
                     {      
                             
 

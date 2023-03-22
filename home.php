@@ -77,7 +77,7 @@
                                           <br>
                                     <!-- button -->
                                     <a href="productadd.html" type="button" class="btn btn-primary">Add </a>
-                                    <button type="submit" name="stud_delete_multiple_btn" class="btn btn-danger">Mass Delete</button>
+                                    <button type="submit" name="pro_delete_multiple_btn" class="btn btn-danger">Mass Delete</button>
                              </div>
 
 
