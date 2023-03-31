@@ -10,6 +10,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
     <title>Product List</title>
+    <?php
+      require('parentclass.php');
+      require('dvd.php');
+      require('book.php');
+      require('furniture.php');
+    ?>
        
 </head>
 
@@ -41,6 +47,14 @@
                         {
 
                             foreach ( $result as $result ){
+                            // parentclass $product;
+                            $newobject= new $result["type"]($result["sku"],$result["name"],$result["price"],$result["type"]);
+                            $newobject->setsku($result["sku"]);
+                            $newobject->setname($result["name"]);
+                            $newobject->setprice($result["price"]); 
+                            $newobject->setselected($result["type"]);
+                            $newobject->setvaluestore($result["valuestore"]);
+                            
 
                    ?>
 
@@ -50,10 +64,10 @@
                                           
                                           <div class="card-block"  style="text-align: center;">
 
-                                                      <p class="card-subtitle text-muted"> <?= $result['sku']; ?>         </p>
-                                                      <p class="card-subtitle text-muted"> <?= $result['name']; ?>        </p>
-                                                      <p class="card-subtitle text-muted"> <?= $result['price']; ?> $     </p>
-                                                      <p class="card-subtitle text-muted"> <?= $result['valuestore']; ?>  </p>
+                                                      <p class="card-subtitle text-muted"> <?= $newobject->getsku(); ?>         </p>
+                                                      <p class="card-subtitle text-muted"> <?= $newobject->getname(); ?>        </p>
+                                                      <p class="card-subtitle text-muted"> <?= $newobject->getprice(); ?> $     </p>
+                                                      <p class="card-subtitle text-muted"> <?= $newobject->getvaluestore() ?>  </p>
                                           </div>
                                       </div>
                                   </div>
@@ -76,7 +90,7 @@
                               <div style="text-align: center;">
                                           <br>
                                     <!-- button -->
-                                    <a href="productadd.html" type="button" class="btn btn-primary">Add </a>
+                                    <a href="productadd.php" type="button" class="btn btn-primary">Add </a>
                                     <button type="submit" name="pro_delete_multiple_btn" class="btn btn-danger">Mass Delete</button>
                              </div>
 

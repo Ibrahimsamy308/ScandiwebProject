@@ -7,7 +7,7 @@
         require('store.php');
         require('delete.php');
 
-
+       
         // creating an object
         $newobject= new $_POST["typeswitcher"]($_POST["sku"],$name=$_POST["name"],$price=$_POST["price"],$selected=$_POST["typeswitcher"]);
         $newobject->setsku($_POST["sku"]);
