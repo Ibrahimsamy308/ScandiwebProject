@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 
     <!-- Title Page-->
-    <title>Product Add</title>
+    <title>Product Page</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -26,33 +26,33 @@
             <div class="card card-2">
                 <div class="card-body">
                    
-                    <form   method="POST"  action="Productlist.php">
-                        <h2 class="title">Product</h2>
+                    <form  id="#product_form"  method="POST"  action="Productlist.php">
+                        <h2 class="title">Product Form</h2>
                         <hr>
                   
                         <div class="input-group">
-                            <input class="input--style-2" type="text" placeholder="SKU" name="sku"   >
+                            <input id="#sku" class="input--style-2" type="text" placeholder="SKU" name="sku"   >
                             <span id="alr_sku" class="input-group hidden" style=" color: red;border-bottom: none;">The sku is already here !!!</span>
                             <span id="emp_sku" class="input-group hidden" style=" color: red;border-bottom: none;">The sku is empty...!!!</span>                        
                         </div>
 
                         <div class="input-group">
-                            <input class="input--style-2" type="text" placeholder="Name" name="name"  >
+                            <input id="#name"class="input--style-2" type="text" placeholder="Name" name="name"  >
                             <span id="emp_name" class="input-group hidden" style=" color: red;border-bottom: none;">The name is empty...!!!</span>
                         </div>
                         
                         <div class="input-group">
-                            <input class="input--style-2" type="number" placeholder="Price($)" name="price" >
+                            <input id="#price" class="input--style-2" type="number" placeholder="Price($)" name="price" >
                             <span id="emp_pri" class="input-group hidden" style=" color: red;border-bottom: none;">The price is empty...!!!</span>
                         </div>
 
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="typeswitcher" onchange="showDiv(this)" >
+                                <select id="#productType" name="typeswitcher" onchange="showDiv(this)" >
                                     <option disabled="disabled" selected="selected" >Type Switcher</option>
-                                    <option    value="dvd" >DVD</option>
-                                    <option    value="furniture">Furniture</option>
-                                    <option    value="book">Book</option>
+                                    <option id="DVD"   value="dvd" >DVD</option>
+                                    <option id="Furniture"   value="furniture">Furniture</option>
+                                    <option id="Book"  value="book">Book</option>
                                 </select>
                                 <div class="select-dropdown"></div>
                             </div>
@@ -61,43 +61,37 @@
 
                         <!-- categories of div hidden  -->
                         <div id="dvd"  class="input-group hidden">
-                            <input class="input--style-2" type="number" placeholder="Size(MB)" name="size"  >
+                            <input id="#size" class="input--style-2" type="number" placeholder="Size(MB)" name="size"  >
+                              <span id="product_description">You choose the DVD and this is demonad the size of it by the Miga byte.</span>
                             <span id="emp_size" class="input-group hidden" style=" color: red;border-bottom: none;">The Size is empty...!!!</span>
                         </div>
 
                         <div id="book" class="input-group hidden">
-                            <input class="input--style-2" type="number" placeholder="Weight (KG)" name="weight"  >
+                            <input id="#weight" class="input--style-2" type="number" placeholder="Weight (KG)" name="weight"  >
+                             <span id="product_description">You choose the BOOK and this is demonad the weight of it by the Kilo Gram.</span>
                             <span id="emp_weight" class="input-group hidden" style=" color: red;border-bottom: none;">The weight is empty...!!!</span>
                         </div>
 
                         <div id="furniture" class="input-group hidden">
-                            <input class="input--style-2" type="number" placeholder="Height(CM)" name="height" >
+                            <input id="#height" class="input--style-2" type="number" placeholder="Height(CM)" name="height" >
+                             <span id="product_description">You choose the Furniture and this is demonad the Hieght,Width and Length of it by the Centymeter.</span>
                             <span id="emp_hei" class="input-group hidden" style=" color: red;border-bottom: none;">The height is empty...!!!</span>
                             <hr>
-                            <input class="input--style-2" type="number" placeholder="Width(CM)" name="width" >
+                            <input id="#width" class="input--style-2" type="number" placeholder="Width(CM)" name="width" >
                             <span id="emp_wid" class="input-group hidden" style=" color: red;border-bottom: none;">The width is empty...!!!</span>
                             <hr>
-                            <input class="input--style-2" type="number" placeholder="Lenght(CM)" name="lenght" >
+                            <input id="#length" class="input--style-2" type="number" placeholder="Lenght(CM)" name="lenght" >
                             <span id="emp_len" class="input-group hidden" style=" color: red;border-bottom: none;">The length is empty...!!!</span>
                         </div>
 
                           <!-- Buttons  -->
                             <div class="p-t-20" >
-                                <button  class="btn btn--radius btn--new" type="submit" name="sign-up">Add</button>
+                                <button  class="btn btn--radius btn--new" type="submit" name="sign-up">Save</button>
                             </div>  
 
                             <div class="p-t-20">
-                                <!-- <a href="productadd.html" class="btn btn--radius btn--new" style="text-decoration: none;" type="cancel" >Cancel</a> -->
-                                <button class="btn btn--radius btn--new" style="text-decoration: none;" type="reset" value="reset" >Cancel</button>
+                                <a href="index.php" class="btn btn--radius btn--new" style="text-decoration: none;" type="button"  >Cancel</a>
                             </div>
-                     
-                      
-
-                       
-
-                        
-
-
                     </form>
                 </div>
             </div>
@@ -126,18 +120,22 @@
             document.getElementById('book').style.display = "none";
            }
         } 
+        
         </script>
 
                
 
-        <script>
-               document.forms[0].onsubmit= function(e){
+        <script type="text/javascript">
+              
+         // the validation 
+         document.forms[0].onsubmit= function(e){
               
                 let fsku = true;
                 let skuvalidation = true;
                 let namevalidation = true;
                 let pricevalidation = true;
                 let selectvalidation = false;
+                
                 // flags for the dimensions size,width,.........
                 let fdimvalidation = true;
                 let sdimvalidation = true;
@@ -164,11 +162,8 @@
                     pricevalidation= false;
                     document.getElementById('emp_pri').style.display = "block";
                 }
-                // if the Select is empty
-                // console.log(selectinput.value);
-                // console.log("the seee "+selectvalidation);
-                // if the select 
-              
+               
+                // if the Select is empty              
                 if(selectinput.value ==="dvd" ||selectinput.value ==="book"||selectinput.value ==="furniture" ){
                     selectvalidation= true;
                     if(selectinput.value ==="dvd"){
@@ -206,28 +201,26 @@
 
                 }
 
-                }else{
-                    document.getElementById('emp_typ').style.display = "block";
                 }
-
-
-                // if the sku is in the database
-                <?php 
-                       $conn = new mysqli("localhost","root","", "productlist");
-                        // Check connection
-                        if ($conn->connect_error) {
-                          die("Connection failed: " . $conn->connect_error);
-                        }
-
-                        $sql = "SELECT * FROM product ";
-                        $result=mysqli_query($conn,$sql);
-                        $check =mysqli_fetch_array($result);
-
-                        if(mysqli_num_rows($result) > 0)
-                        {
-
-                            foreach ( $result as $result ){
-                               ?> 
+                else{
+                    document.getElementById('emp_typ').style.display = "block";
+                     }
+         
+                  <?php
+                            $conn = new mysqli("localhost","root","","productlist");
+                                // Check connection
+                                if ($conn->connect_error) {
+                                  die("Connection failed: " . $conn->connect_error);
+                                }
+                                 $sql = "SELECT * FROM product ";
+                                $result=mysqli_query($conn,$sql);
+                                $check =mysqli_fetch_array($result);
+        
+                                if(mysqli_num_rows($result) > 0)
+                                {
+        
+                                    foreach ( $result as $result ){
+                     ?>
                           
                             
                                 if('<?php echo $result['sku'] ?>' === skuinput.value)
@@ -237,24 +230,19 @@
                                    
                                 }
                                <?php
-                        
-                            }
-                        }
+                                
+                                    }
+                                }
                        
-                    ?>  
+                               ?>
         
-                //  console.log(skuvalidation);
-                //  console.log(namevalidation);
-                //  console.log(pricevalidation);
-                //  console.log(selectvalidation);
-                //  console.log(fsku);
-
+                //console.log(skuvalidation);
+                //Conditions for the submiting the form..... 
                 if(skuvalidation ===false || fsku ===false || pricevalidation ===false||selectvalidation===false || 
                 fdimvalidation=== false || sdimvalidation===false || rdimvalidation=== false){
                     e.preventDefault();
                 }
             }
-
 
         </script>
 

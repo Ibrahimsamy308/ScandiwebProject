@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html >
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,18 +21,18 @@
 <body>
     
           <!-- Main-->
-           <div class="py-5 ">
+           <div  class="py-5 " class="body">
               <div class="container">
                 <h4 class="card-title">Product List</h4>
 
-                <form action="delete.php" method="POST">
+                <form  action="delete.php" method="POST">
                 
                  <!-- Div Card for show product start from here -->
                  <div class="row hidden-md-up">
 
                    <?php
 
-                      $conn = new mysqli("localhost","root","", "productlist");
+                      $conn = new mysqli("localhost","root","","productlist");
                         // Check connection
                         if ($conn->connect_error) {
                           die("Connection failed: " . $conn->connect_error);
@@ -60,14 +59,14 @@
 
                                   <div  class="col-md-4"> 
                                     <div  class="card">
-                                      <input style="margin-left: -60%; margin-top: 2%;" type="checkbox" name="pro_delete_id[]" value="<?= $result['id']; ?>">
+                                      <input class="delete-checkbox" style="margin-left: -60%; margin-top: 2%;" type="checkbox" name="pro_delete_id[]" value="<?= $result['id']; ?>">
                                           
                                           <div class="card-block"  style="text-align: center;">
 
-                                                      <p class="card-subtitle text-muted"> <?= $newobject->getsku(); ?>         </p>
-                                                      <p class="card-subtitle text-muted"> <?= $newobject->getname(); ?>        </p>
-                                                      <p class="card-subtitle text-muted"> <?= $newobject->getprice(); ?> $     </p>
-                                                      <p class="card-subtitle text-muted"> <?= $newobject->getvaluestore() ?>  </p>
+                                                      <p id="#sku" class="card-subtitle text-muted"> <?= $newobject->getsku(); ?>         </p>
+                                                      <p id="#name" class="card-subtitle text-muted"> <?= $newobject->getname(); ?>        </p>
+                                                      <p id="#price" class="card-subtitle text-muted"> <?= $newobject->getprice(); ?> $     </p>
+                                                      <p id="#productType" class="card-subtitle text-muted"> <?= $newobject->getvaluestore() ?>  </p>
                                           </div>
                                       </div>
                                   </div>
@@ -81,8 +80,6 @@
                                         <p class="card-subtitle text-muted">No Product Found</p>
                               <?php
                                      }
-
-
                                   
                                 ?>
                               
@@ -90,33 +87,12 @@
                               <div style="text-align: center;">
                                           <br>
                                     <!-- button -->
-                                    <a href="productadd.php" type="button" class="btn btn-primary">Add </a>
-                                    <button type="submit" name="pro_delete_multiple_btn" class="btn btn-danger">Mass Delete</button>
+                                    <a  href="addproduct.php" type="button" class="btn btn-primary">ADD</a>
+                                    <button id="#delete-product-btn" type="submit" name="pro_delete_multiple_btn" class="btn btn-danger">MASS DELETE</button>
                              </div>
-
-
-
-               
-              
                 </form>
-                        
-                        
               </div>
            </div>
-
-
-                                  
-                                
-                                    
-                                  
-                       
-                    
-                    
-        
-
-
-        
-
 </body>
            
 
