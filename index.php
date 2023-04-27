@@ -10,11 +10,17 @@
     <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
     <title>Product List</title>
     <?php
-      require('parentclass.php');
-      require('dvd.php');
-      require('book.php');
-      require('furniture.php');
+      require('Product.php');
+      require('Dvd.php');
+      require('Book.php');
+      require('Furniture.php');
     ?>
+    
+    <style>
+        .delete-checkbox{
+            
+        }
+    </style>
        
 </head>
 
@@ -25,7 +31,7 @@
               <div class="container">
                 <h4 class="card-title">Product List</h4>
 
-                <form  action="delete.php" method="POST">
+                <form  action="Delete.php" method="POST">
                 
                  <!-- Div Card for show product start from here -->
                  <div class="row hidden-md-up">
@@ -87,12 +93,14 @@
                               <div style="text-align: center;">
                                           <br>
                                     <!-- button -->
-                                    <a  href="addproduct.php" type="button" class="btn btn-primary">ADD</a>
+                                    <a href="AddProduct.php" type="button" class="btn btn-primary">ADD</a>
                                     <button id="#delete-product-btn" type="submit" name="pro_delete_multiple_btn" class="btn btn-danger">MASS DELETE</button>
                              </div>
                 </form>
               </div>
            </div>
+           
+          
 </body>
            
 

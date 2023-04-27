@@ -5,7 +5,7 @@
                     public function __construct(){}
 
                     // create the connection and store the data in the database
-                    public function storedb(parentclass $newparent){
+                    public function storedb(Product $newparent){
 
                         // get the data of the object.
                         $sku=$newparent->getsku();

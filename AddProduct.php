@@ -26,62 +26,62 @@
             <div class="card card-2">
                 <div class="card-body">
                    
-                    <form  id="#product_form"  method="POST"  action="Productlist.php">
+                    <form id="product_form"  method="POST"  action="Productlist.php">
                         <h2 class="title">Product Form</h2>
                         <hr>
                   
                         <div class="input-group">
-                            <input id="#sku" class="input--style-2" type="text" placeholder="SKU" name="sku"   >
-                            <span id="alr_sku" class="input-group hidden" style=" color: red;border-bottom: none;">The sku is already here !!!</span>
-                            <span id="emp_sku" class="input-group hidden" style=" color: red;border-bottom: none;">The sku is empty...!!!</span>                        
+                            <input id="sku" class="input--style-2" type="text" placeholder="SKU" name="sku"   >
+                            <span id="alr_sku" class="input-group hidden" style=" color: red;border-bottom: none;">"SKU is already tokan"</span>
+                            <span id="emp_sku" class="input-group hidden" style=" color: red;border-bottom: none;">"Please, submit required data"</span>                        
                         </div>
 
                         <div class="input-group">
-                            <input id="#name"class="input--style-2" type="text" placeholder="Name" name="name"  >
-                            <span id="emp_name" class="input-group hidden" style=" color: red;border-bottom: none;">The name is empty...!!!</span>
+                            <input id="name"class="input--style-2" type="text" placeholder="Name" name="name"  >
+                            <span id="emp_name" class="input-group hidden" style=" color: red;border-bottom: none;">"Please, submit required data"</span>
                         </div>
                         
                         <div class="input-group">
-                            <input id="#price" class="input--style-2" type="number" placeholder="Price($)" name="price" >
-                            <span id="emp_pri" class="input-group hidden" style=" color: red;border-bottom: none;">The price is empty...!!!</span>
+                            <input id="price" class="input--style-2" type="number" placeholder="Price($)" name="price" >
+                            <span id="emp_pri" class="input-group hidden" style=" color: red;border-bottom: none;">"Please, submit required data"</span>
                         </div>
 
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select id="#productType" name="typeswitcher" onchange="showDiv(this)" >
+                                <select id="productType" name="typeswitcher" onchange="showDiv(this)" >
                                     <option disabled="disabled" selected="selected" >Type Switcher</option>
-                                    <option id="DVD"   value="dvd" >DVD</option>
-                                    <option id="Furniture"   value="furniture">Furniture</option>
-                                    <option id="Book"  value="book">Book</option>
+                                    <option id="DVD"         value="Dvd" >DVD</option>
+                                    <option id="Book"        value="Book">Book</option>
+                                    <option id="Furniture"   value="Furniture">Furniture</option>
                                 </select>
                                 <div class="select-dropdown"></div>
                             </div>
-                            <span id="emp_typ" class="input-group hidden" style=" color: red;border-bottom: none;">The Type Switcher is empty...!!!</span>
+                            <span id="emp_typ" class="input-group hidden" style=" color: red;border-bottom: none;">"Please, submit required data"</span>
                         </div>
 
                         <!-- categories of div hidden  -->
                         <div id="dvd"  class="input-group hidden">
-                            <input id="#size" class="input--style-2" type="number" placeholder="Size(MB)" name="size"  >
-                              <span id="product_description">You choose the DVD and this is demonad the size of it by the Miga byte.</span>
-                            <span id="emp_size" class="input-group hidden" style=" color: red;border-bottom: none;">The Size is empty...!!!</span>
+                          <span id="product_description">Please, provide size.</span>
+                            <input id="size" class="input--style-2" type="number" placeholder="Size(MB)" name="size"  >
+                            <span id="emp_size" class="input-group hidden" style=" color: red;border-bottom: none;">"Please, submit required data"</span>
                         </div>
 
                         <div id="book" class="input-group hidden">
-                            <input id="#weight" class="input--style-2" type="number" placeholder="Weight (KG)" name="weight"  >
-                             <span id="product_description">You choose the BOOK and this is demonad the weight of it by the Kilo Gram.</span>
-                            <span id="emp_weight" class="input-group hidden" style=" color: red;border-bottom: none;">The weight is empty...!!!</span>
+                              <span id="product_description">"Please, provide weight"</span>
+                            <input id="weight" class="input--style-2" type="number" placeholder="Weight (KG)" name="weight"  >
+                            <span id="emp_weight" class="input-group hidden" style=" color: red;border-bottom: none;">"Please, submit required data"</span>
                         </div>
 
                         <div id="furniture" class="input-group hidden">
-                            <input id="#height" class="input--style-2" type="number" placeholder="Height(CM)" name="height" >
-                             <span id="product_description">You choose the Furniture and this is demonad the Hieght,Width and Length of it by the Centymeter.</span>
-                            <span id="emp_hei" class="input-group hidden" style=" color: red;border-bottom: none;">The height is empty...!!!</span>
+                             <span id="product_description">Please, provide dimensions.</span>
+                            <input id="height" class="input--style-2" type="number" placeholder="Height(CM)" name="height" >
+                            <span id="emp_hei" class="input-group hidden" style=" color: red;border-bottom: none;">"Please, submit required data"</span>
                             <hr>
-                            <input id="#width" class="input--style-2" type="number" placeholder="Width(CM)" name="width" >
-                            <span id="emp_wid" class="input-group hidden" style=" color: red;border-bottom: none;">The width is empty...!!!</span>
+                            <input id="width" class="input--style-2" type="number" placeholder="Width(CM)" name="width" >
+                            <span id="emp_wid" class="input-group hidden" style=" color: red;border-bottom: none;">"Please, submit required data"</span>
                             <hr>
-                            <input id="#length" class="input--style-2" type="number" placeholder="Lenght(CM)" name="lenght" >
-                            <span id="emp_len" class="input-group hidden" style=" color: red;border-bottom: none;">The length is empty...!!!</span>
+                            <input id="length" class="input--style-2" type="number" placeholder="Lenght(CM)" name="lenght" >
+                            <span id="emp_len" class="input-group hidden" style=" color: red;border-bottom: none;">"Please, submit required data"</span>
                         </div>
 
                           <!-- Buttons  -->
@@ -97,20 +97,20 @@
             </div>
         </div>
     </div>
-
-
+ 
+     
     <script type="text/javascript">
         function showDiv(select){
-           if(select.value=='dvd'){
+           if(select.value=='Dvd'){
             document.getElementById('dvd').style.display = "block";
             document.getElementById('furniture').style.display = "none";
             document.getElementById('book').style.display = "none";
-           }  else if(select.value=='furniture'){
+           }  else if(select.value=='Furniture'){
             document.getElementById('furniture').style.display = "block";
             document.getElementById('dvd').style.display = "none";
             document.getElementById('book').style.display = "none";
            }
-           else if(select.value=='book'){
+           else if(select.value=='Book'){
             document.getElementById('book').style.display = "block";
             document.getElementById('furniture').style.display = "none";
             document.getElementById('dvd').style.display = "none";
@@ -164,7 +164,7 @@
                 }
                
                 // if the Select is empty              
-                if(selectinput.value ==="dvd" ||selectinput.value ==="book"||selectinput.value ==="furniture" ){
+                if(selectinput.value ==="Dvd" ||selectinput.value ==="Book"||selectinput.value ==="Furniture" ){
                     selectvalidation= true;
                     if(selectinput.value ==="dvd"){
                     let sizeinput = document.querySelector("[name='size']");

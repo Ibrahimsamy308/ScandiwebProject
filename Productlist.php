@@ -1,11 +1,11 @@
     
     <?php
-        require('parentclass.php');
-        require('dvd.php');
-        require('book.php');
-        require('furniture.php');
-        require('store.php');
-        require('delete.php');
+        require('Product.php');
+        require('Dvd.php');
+        require('Book.php');
+        require('Furniture.php');
+        require('Store.php');
+        require('Delete.php');
 
 
         // creating an object
